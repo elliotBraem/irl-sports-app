@@ -40,6 +40,16 @@ jobs:
   playwright-tests:
     name: Playwright tests
     runs-on: ubuntu-latest
+    env:
+      MODE: test
+      VITE_NETWORK_ID: testnet
+      VITE_DEBUG_MODE: true
+      VITE_GOOGLE_CLIENT_ID: test-client-id
+      VITE_CONTRACT_ID: 1730317152765-factory.testnet
+      VITE_AIRTABLE_WORKER_URL: https://airtable-worker-dev.keypom.workers.dev
+      VITE_IPFS_WORKER_URL: https://ipfs-pinning-dev.keypom.workers.dev
+      VITE_MULTICHAIN_WORKER_URL: https://multichain-worker-dev.keypom.workers.dev
+
     strategy:
       matrix:
         node-version: [20]
